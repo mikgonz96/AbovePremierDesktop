@@ -101,6 +101,7 @@ namespace AbovePremierDesktop.Vistas
             this.BarraCarga.Name = "BarraCarga";
             this.BarraCarga.Size = new System.Drawing.Size(358, 15);
             this.BarraCarga.TabIndex = 11;
+            this.BarraCarga.Visible = false;
             // 
             // ConvertirButton
             // 

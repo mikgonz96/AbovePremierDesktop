@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,28 +75,28 @@ namespace AbovePremierDesktop.Vistas
                 switch (Opciones.SelectedItem.ToString().Trim())
                 {
                     case "Convertir a .mp4":
-                        MessageBox.Show("Usted va a convertir a mp4");
-                        FFmpeg.FFmpeg.convertirMP4(RutaTxt.Text);
+                       
+                        FFmpeg.FFmpeg.convertirVideo(RutaTxt.Text,".mp4");
                         break;
 
                     case "Convertir a .mpeg":
-                        MessageBox.Show("Usted va a convertir a mpeg");
-                        FFmpeg.FFmpeg.convertirMPEG(RutaTxt.Text);
+                        
+                        FFmpeg.FFmpeg.convertirVideo(RutaTxt.Text, ".mpeg");
                         break;
 
                     case "Convertir a .avi":
-                        MessageBox.Show("Usted va a convertir a avi");
-                        FFmpeg.FFmpeg.convertirAVI(RutaTxt.Text);
+
+                        FFmpeg.FFmpeg.convertirVideo(RutaTxt.Text, ".avi");
                         break;
 
                     case "Convertir a .flv":
-                        MessageBox.Show("Usted va a convertir a flv");
-                        FFmpeg.FFmpeg.convertirFLV(RutaTxt.Text);
+
+                        FFmpeg.FFmpeg.convertirVideo(RutaTxt.Text, ".flv");
                         break;
 
                     case "Obtener audio (.mp3)":
-                        MessageBox.Show("Usted va a convertir a mp3");
-                        FFmpeg.FFmpeg.convertirMP3(RutaTxt.Text);
+
+                        FFmpeg.FFmpeg.convertirVideo(RutaTxt.Text, ".mp3");
                         break;
 
                     case "Quitar audio":

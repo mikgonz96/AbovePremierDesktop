@@ -1,38 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AbovePremierDesktop.FFmpeg
 {
     class FFmpeg
     {
 
-        public static void convertirMP4(string ruta)
+        public static void convertirVideo(string ruta, string nuevoFormato)
         {
+            var nombreArchivo = Path.GetFileName(ruta);
+            var nombreGuardado = Path.GetFileNameWithoutExtension(ruta) + nuevoFormato;
+            
+            Process process = Process.Start("cmd.exe", $@"/k cd {Path.GetDirectoryName(ruta)} && ffmpeg.exe -i {nombreArchivo} {nombreGuardado}")
 
         }
 
-        public static void convertirAVI(string ruta)
-        {
-
-        }
-
-        public static void convertirMPEG(string ruta)
-        {
-
-        }
-
-        public static void convertirFLV(string ruta)
-        { 
-
-        }
-
-        public static void convertirMP3(string ruta)
-        {
-
-        }
 
         public static void quitarAudio(string ruta)
         {
