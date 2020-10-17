@@ -16,8 +16,8 @@ namespace AbovePremierDesktop.FFmpeg
         {
             var nombreArchivo = Path.GetFileName(ruta);
             var nombreGuardado = Path.GetFileNameWithoutExtension(ruta) + nuevoFormato;
-            
-            Process process = Process.Start("cmd.exe", $@"/k cd {Path.GetDirectoryName(ruta)} && ffmpeg.exe -i {nombreArchivo} {nombreGuardado}")
+
+            Process process = Process.Start("cmd.exe", $@"/k cd {Path.GetDirectoryName(ruta)} && ffmpeg.exe -i {nombreArchivo} {nombreGuardado}");
 
         }
 
