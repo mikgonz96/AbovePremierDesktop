@@ -1,4 +1,6 @@
-﻿namespace AbovePremierDesktop.Vistas
+﻿using System;
+
+namespace AbovePremierDesktop.Vistas
 {
     partial class Conversor
     {
@@ -211,6 +213,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Conversor_Load(object sender, EventArgs e)
+        {
+           
         }
 
         #endregion

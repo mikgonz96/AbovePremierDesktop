@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using AbovePremierDesktop.FFmpeg;
 
 
 namespace AbovePremierDesktop.Vistas
@@ -22,11 +22,12 @@ namespace AbovePremierDesktop.Vistas
         private void SalirButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+           
         }
 
         private void Opciones_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
             if ( Opciones.SelectedItem.ToString() == "Cambiar resolución")
             {
                 ResTxt.Enabled = true;
@@ -54,10 +55,13 @@ namespace AbovePremierDesktop.Vistas
                 RutaTxt.Text = BuscadorArchivos.FileName;
                
             }
+           
         }
 
         private void ConvertirButton_Click(object sender, EventArgs e)
         {
+
+            
             if (String.IsNullOrEmpty(RutaTxt.Text))
             {
 
@@ -71,34 +75,42 @@ namespace AbovePremierDesktop.Vistas
                 {
                     case "Convertir a .mp4":
                         MessageBox.Show("Usted va a convertir a mp4");
+                        FFmpeg.FFmpeg.convertirMP4(RutaTxt.Text);
                         break;
 
                     case "Convertir a .mpeg":
                         MessageBox.Show("Usted va a convertir a mpeg");
+                        FFmpeg.FFmpeg.convertirMPEG(RutaTxt.Text);
                         break;
 
                     case "Convertir a .avi":
                         MessageBox.Show("Usted va a convertir a avi");
+                        FFmpeg.FFmpeg.convertirAVI(RutaTxt.Text);
                         break;
 
                     case "Convertir a .flv":
                         MessageBox.Show("Usted va a convertir a flv");
+                        FFmpeg.FFmpeg.convertirFLV(RutaTxt.Text);
                         break;
 
                     case "Obtener audio (.mp3)":
                         MessageBox.Show("Usted va a convertir a mp3");
+                        FFmpeg.FFmpeg.convertirMP3(RutaTxt.Text);
                         break;
 
                     case "Quitar audio":
                         MessageBox.Show("Usted va a quitar audio");
+                        FFmpeg.FFmpeg.quitarAudio(RutaTxt.Text);
                         break;
 
                     case "Cambiar resolución":
                         MessageBox.Show("Usted va a cambiar resolución");
+                        FFmpeg.FFmpeg.cambiarRes(RutaTxt.Text);
                         break;
 
                     case "Extraer imagenes cada 'x' frames":
                         MessageBox.Show("Usted va a extraer imagen");
+                        FFmpeg.FFmpeg.obtenerImgs(RutaTxt.Text);
                         break;
 
                     default:
