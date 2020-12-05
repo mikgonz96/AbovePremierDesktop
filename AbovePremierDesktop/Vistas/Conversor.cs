@@ -61,13 +61,17 @@ namespace AbovePremierDesktop.Vistas
 
         private void ConvertirButton_Click(object sender, EventArgs e)
         {
+            String ext = Path.GetExtension(RutaTxt.Text);
+            String[] extp = { ".mp4", ".mpeg", ".flv", ".avi" };
 
-            
             if (String.IsNullOrEmpty(RutaTxt.Text))
             {
-
+                
                 MessageBox.Show("Por favor seleccione un archivo para continuar");
 
+            }
+            else if(!extp.Contains(ext)){
+                MessageBox.Show("El archivo elegido debe pertenecer a uno de los siguientes tipos:\n •.mp4\n •.mpeg \n •.avi \n •.flv");
             }
             else
             {
@@ -76,7 +80,8 @@ namespace AbovePremierDesktop.Vistas
                 {
                     case "Convertir a .mp4":
                        
-                        FFmpeg.FFmpeg.convertirVideo(RutaTxt.Text,".mp4");
+                        
+                        FFmpeg.FFmpeg.convertirVideo(RutaTxt.Text, ".mp4");
                         break;
 
                     case "Convertir a .mpeg":
@@ -100,24 +105,37 @@ namespace AbovePremierDesktop.Vistas
                         break;
 
                     case "Quitar audio":
-                        MessageBox.Show("Usted va a quitar audio");
-                        FFmpeg.FFmpeg.quitarAudio(RutaTxt.Text);
+
+                        FFmpeg.FFmpeg.quitarAudio(RutaTxt.Text,ext);
                         break;
 
                     case "Cambiar resolución":
-                        MessageBox.Show("Usted va a cambiar resolución");
-                        FFmpeg.FFmpeg.cambiarRes(RutaTxt.Text);
+
+                        FFmpeg.FFmpeg.cambiarRes(RutaTxt.Text,ResTxt.Text,ext);
                         break;
 
                     case "Extraer imagenes cada 'x' frames":
-                        MessageBox.Show("Usted va a extraer imagen");
-                        FFmpeg.FFmpeg.obtenerImgs(RutaTxt.Text);
+                        
+                        FFmpeg.FFmpeg.obtenerImgs(RutaTxt.Text, FramesTxt.Text);
                         break;
 
                     default:
                         MessageBox.Show("Seleccione una opción para continuar");
                         break;
                 }
+
+                MessageBox.Show("¡Su archivo fue manipulado correctamente! En unos minutos podrá verlo en la carpeta del archivo original. ☺");
+            }
+        }
+
+        private void FramesTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            if (!Char.IsDigit(c) && c!=8 && c != 46)
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo puede ingresar números enteros");
             }
         }
     }
@@ -125,7 +143,7 @@ namespace AbovePremierDesktop.Vistas
 
 /*
 Lista de opciones
-*Convertir a .mp4
+*Convertir a .mp4 
 *Convertir a .mpeg
 *Convertir a .avi
 *Convertir a .flv

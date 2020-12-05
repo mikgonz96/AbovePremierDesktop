@@ -9,3 +9,8 @@ C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremie
 C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\obj\Debug\AbovePremierDesktop.exe
 C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\obj\Debug\AbovePremierDesktop.pdb
 C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\obj\Debug\AbovePremierDesktop.Vistas.Conversor.resources
+C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\bin\Debug\RestSharp.dll
+C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\bin\Debug\RestSharp.xml
+C:\Users\Miiku\Desktop\DV\4to Cuatrimestre\Plataformas de Desarrollo\AbovePremierDesktop\AbovePremierDesktop\obj\Debug\AbovePremierDesktop.csproj.CopyComplete

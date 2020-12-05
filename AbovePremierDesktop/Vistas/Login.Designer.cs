@@ -76,6 +76,7 @@
             this.PassTxt.PasswordChar = '*';
             this.PassTxt.Size = new System.Drawing.Size(135, 20);
             this.PassTxt.TabIndex = 3;
+            this.PassTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PassTxt_KeyPress);
             // 
             // UsuarioTxt
             // 

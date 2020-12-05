@@ -35,7 +35,6 @@ namespace AbovePremierDesktop.Vistas
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Opciones = new System.Windows.Forms.ComboBox();
-            this.BarraCarga = new System.Windows.Forms.ProgressBar();
             this.ConvertirButton = new System.Windows.Forms.Button();
             this.SalirButton = new System.Windows.Forms.Button();
             this.FramesTxt = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@ namespace AbovePremierDesktop.Vistas
             this.label4 = new System.Windows.Forms.Label();
             this.RutaTxt = new System.Windows.Forms.TextBox();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.Ejemplo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BuscadorArchivos
@@ -68,7 +68,7 @@ namespace AbovePremierDesktop.Vistas
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Rubik", 13F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(47, 204);
+            this.label2.Location = new System.Drawing.Point(47, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(336, 24);
             this.label2.TabIndex = 5;
@@ -87,26 +87,17 @@ namespace AbovePremierDesktop.Vistas
             "Quitar audio",
             "Cambiar resolución",
             "Extraer imagenes cada \'x\' frames"});
-            this.Opciones.Location = new System.Drawing.Point(90, 280);
+            this.Opciones.Location = new System.Drawing.Point(90, 299);
             this.Opciones.Name = "Opciones";
             this.Opciones.Size = new System.Drawing.Size(204, 22);
             this.Opciones.TabIndex = 10;
             this.Opciones.Text = "  ------";
             this.Opciones.SelectedIndexChanged += new System.EventHandler(this.Opciones_SelectedIndexChanged);
             // 
-            // BarraCarga
-            // 
-            this.BarraCarga.ForeColor = System.Drawing.Color.LimeGreen;
-            this.BarraCarga.Location = new System.Drawing.Point(133, 414);
-            this.BarraCarga.Name = "BarraCarga";
-            this.BarraCarga.Size = new System.Drawing.Size(358, 15);
-            this.BarraCarga.TabIndex = 11;
-            this.BarraCarga.Visible = false;
-            // 
             // ConvertirButton
             // 
             this.ConvertirButton.Font = new System.Drawing.Font("Rubik", 8.25F);
-            this.ConvertirButton.Location = new System.Drawing.Point(272, 355);
+            this.ConvertirButton.Location = new System.Drawing.Point(278, 403);
             this.ConvertirButton.Name = "ConvertirButton";
             this.ConvertirButton.Size = new System.Drawing.Size(75, 23);
             this.ConvertirButton.TabIndex = 12;
@@ -129,16 +120,17 @@ namespace AbovePremierDesktop.Vistas
             // 
             this.FramesTxt.Enabled = false;
             this.FramesTxt.Font = new System.Drawing.Font("Rubik", 8.25F);
-            this.FramesTxt.Location = new System.Drawing.Point(390, 258);
+            this.FramesTxt.Location = new System.Drawing.Point(390, 277);
             this.FramesTxt.Name = "FramesTxt";
             this.FramesTxt.Size = new System.Drawing.Size(47, 21);
             this.FramesTxt.TabIndex = 14;
+            this.FramesTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FramesTxt_KeyPress);
             // 
             // ResTxt
             // 
             this.ResTxt.Enabled = false;
             this.ResTxt.Font = new System.Drawing.Font("Rubik", 8.25F);
-            this.ResTxt.Location = new System.Drawing.Point(419, 297);
+            this.ResTxt.Location = new System.Drawing.Point(419, 316);
             this.ResTxt.Name = "ResTxt";
             this.ResTxt.Size = new System.Drawing.Size(100, 21);
             this.ResTxt.TabIndex = 15;
@@ -148,7 +140,7 @@ namespace AbovePremierDesktop.Vistas
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Rubik", 10F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(327, 259);
+            this.label3.Location = new System.Drawing.Point(327, 278);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 16;
@@ -159,7 +151,7 @@ namespace AbovePremierDesktop.Vistas
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rubik", 10F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(327, 299);
+            this.label4.Location = new System.Drawing.Point(327, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 18);
             this.label4.TabIndex = 17;
@@ -186,6 +178,16 @@ namespace AbovePremierDesktop.Vistas
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // Ejemplo
+            // 
+            this.Ejemplo.AutoSize = true;
+            this.Ejemplo.ForeColor = System.Drawing.SystemColors.Control;
+            this.Ejemplo.Location = new System.Drawing.Point(423, 345);
+            this.Ejemplo.Name = "Ejemplo";
+            this.Ejemplo.Size = new System.Drawing.Size(91, 13);
+            this.Ejemplo.TabIndex = 20;
+            this.Ejemplo.Text = "Ejemplo: 240x100";
+            // 
             // Conversor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +195,7 @@ namespace AbovePremierDesktop.Vistas
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.BackgroundImage = global::AbovePremierDesktop.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(639, 519);
+            this.Controls.Add(this.Ejemplo);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.RutaTxt);
             this.Controls.Add(this.label4);
@@ -201,7 +204,6 @@ namespace AbovePremierDesktop.Vistas
             this.Controls.Add(this.FramesTxt);
             this.Controls.Add(this.SalirButton);
             this.Controls.Add(this.ConvertirButton);
-            this.Controls.Add(this.BarraCarga);
             this.Controls.Add(this.Opciones);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -209,7 +211,7 @@ namespace AbovePremierDesktop.Vistas
             this.Location = new System.Drawing.Point(300, 400);
             this.Name = "Conversor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AbovePremier - Inicio";
+            this.Text = "AbovePremiere - Inicio";
             this.Load += new System.EventHandler(this.Conversor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,7 +229,6 @@ namespace AbovePremierDesktop.Vistas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Opciones;
-        private System.Windows.Forms.ProgressBar BarraCarga;
         private System.Windows.Forms.Button ConvertirButton;
         private System.Windows.Forms.Button SalirButton;
         private System.Windows.Forms.TextBox FramesTxt;
@@ -236,5 +237,6 @@ namespace AbovePremierDesktop.Vistas
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox RutaTxt;
         private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Label Ejemplo;
     }
 }

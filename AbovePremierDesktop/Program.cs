@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AbovePremierDesktop
 {
     static class Program
@@ -17,7 +18,7 @@ namespace AbovePremierDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            UsuariosDAO.generarUsuarios();
+            //UsuariosDAO.generarUsuarios();
             Application.Run(new Login());
             
             

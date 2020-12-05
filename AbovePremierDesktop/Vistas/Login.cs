@@ -21,6 +21,30 @@ namespace AbovePremierDesktop
 
         private void IngresarButton_Click(object sender, EventArgs e)
         {
+            verificarCredenciales();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            BienvenidoTxt.BackColor = Color.Transparent;
+            Inicie.BackColor = Color.Transparent;
+            UsuarioTxt.BackColor = Color.Transparent;
+            ContraseñaTxt.BackColor = Color.Transparent;
+            Error.BackColor = Color.Transparent;
+        }
+
+        private void PassTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+
+            if (c == 13)
+            {
+                verificarCredenciales();
+            }
+        }
+
+        private void verificarCredenciales()
+        {
             var user = UserTxt.Text;
             var pass = PassTxt.Text;
 
@@ -41,15 +65,6 @@ namespace AbovePremierDesktop
                 Error.Text = "Los datos ingresados son incorrectos o el usuario no existe.";
                 Error.Visible = true;
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            BienvenidoTxt.BackColor = Color.Transparent;
-            Inicie.BackColor = Color.Transparent;
-            UsuarioTxt.BackColor = Color.Transparent;
-            ContraseñaTxt.BackColor = Color.Transparent;
-            Error.BackColor = Color.Transparent;
         }
     }
 }
